@@ -27,6 +27,11 @@ html {
 .text.footer__text {
   color: #FFFFFF;
 }
+@media screen and (max-width: 500px) {
+  .text.footer__text {
+    font-size: 12px;
+  }
+}
 .text.footer__text_small {
   font-size: 11px;
 }
@@ -39,6 +44,21 @@ html {
 
 .content {
   max-width: 956px;
+}
+@media screen and (max-width: 970px) {
+  .content {
+    max-width: 632px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .content {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content {
+    max-width: 316px;
+  }
 }
 .header .content {
   display: flex;
@@ -109,10 +129,16 @@ html {
 }
 
 .cards {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 71.5px;
+}
+@media screen and (max-width: 660px) {
+  .cards {
+    justify-content: space-between;
+  }
 }
 .cards .card {
   width: 308px;
@@ -120,8 +146,35 @@ html {
   margin-top: 8px;
   margin-bottom: 8px;
 }
+@media screen and (max-width: 970px) {
+  .cards .card {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .cards .card {
+    width: 48%;
+    height: 48%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+  }
+  .cards .card__photo {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cards .card {
+    width: 308px;
+    height: 366px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
 .cards .card:hover {
   background: rgba(75, 75, 75, 0.04);
+  cursor: pointer;
 }
 .cards .card:active {
   background: rgba(75, 75, 75, 0.08);
@@ -168,6 +221,7 @@ html {
 .footer .footer__block .footer__elements {
   width: 308px;
 }
+
 .arrow-top {
   display: none;
   height: 80px;
@@ -180,6 +234,7 @@ html {
   right: 30px;
   z-index: 1;
   outline: none;
+  cursor: pointer;
 }
 .arrow-top:hover {
   background: rgba(89, 189, 90, 0.8);
@@ -204,7 +259,32 @@ html {
   justify-content: space-between;
   background: #3B3B3B;
   height: 40px;
-  width: 227px;
+  width: 210px;
+}
+@media screen and (max-width: 970px) {
+  .select {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .select {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .select {
+    width: 70px;
+    height: 24px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .select .text {
+    font-size: 11px;
+  }
+  .select .select__arrow {
+    height: 5px;
+    width: 8.75px;
+  }
 }
 .select__language {
   width: 83px;
@@ -212,7 +292,18 @@ html {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 500px) {
+  .select__language {
+    width: 83%;
+  }
+}
 .select__logo {
   height: 16px;
   width: 16px;
+}
+@media screen and (max-width: 500px) {
+  .select__logo {
+    height: 12px;
+    width: 12px;
+  }
 }
