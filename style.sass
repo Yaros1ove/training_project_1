@@ -150,12 +150,26 @@ html
             justify-content: space-between
         &_center
             align-items: center
+        .link_logo
+                &:hover
+                    opacity: 80%
+                &:active
+                    opacity: 60%
         .footer__images
             display: flex
             justify-content: space-around
             width: 330px
         .footer__elements
             width: 308px
+            .link
+                color: rgba(0, 0, 0, 0)
+                &:hover
+                    .text
+                        color: rgba(256, 256, 256, 0.8)
+                &:active
+                    color: none
+                    .text
+                        color: rgba(256, 256, 256, 0.6)
 .arrow-top
     display: none
     height: 80px
@@ -185,13 +199,19 @@ html
     display: flex
     align-items: center
     justify-content: space-between
-    background: #3B3B3B
+    background: #3b3b3b
     height: 40px
     width: 210px
+    &:hover
+        background: #333333
+        cursor: pointer
     @media screen and (max-width: 970px)
         width: 160px
     @media screen and (max-width: 660px)
         width: 60%
+        .select__language
+            display: flex
+            justify-content: space-evenly
     @media screen and (max-width: 500px)
         width: 70px
         height: 24px
@@ -202,6 +222,19 @@ html
         .select__arrow
             height: 5px
             width: 8.75px
+    &_hidden
+        @media screen and (max-width: 660px)
+            width: 16%
+        @media screen and (max-width: 500px)
+            width: 70px
+            height: 24px
+        display: none
+        z-index: 1
+        position: absolute
+        .select__language
+            padding-left: 33px
+            @media screen and (max-width: 660px)
+                padding: 0
     &__language
         width: 83px
         @media screen and (max-width: 500px)
