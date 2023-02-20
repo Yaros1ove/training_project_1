@@ -11,7 +11,28 @@
     <script src="script.js"></script>
 </head>
 
-<body">
+<body>
+    <div class="background"></div>
+    <div class="log-in-wrapper">
+        <div class="log-in">
+            <div class="email-box">
+                <p class="text login__text">E-mail</p>
+                <input id="login" type="email" class="input login__input">
+            </div>
+            <div class="password-box">
+                <p class="text login__text">Пароль</p>
+                <input id="password" type="password" class="input password__input">
+            </div>
+            <div class="login__buttons">
+                <button id="cancelButton" class="button login__button">
+                    <p class="text button__text">Отмена</p>
+                </button>
+                <button id="loginButton" class="button login__button button_passive">
+                    <p class="text button__text">Войти</p>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="header">
         <div class="content">
             <div class="logo header__logo">
@@ -21,14 +42,19 @@
                 <button class="button header__button">
                     <p class="text button__text">Войти</p>
                 </button>
-                <img class="header__basket" src="images/basket.svg" alt="Корзина">
+                <div class="basket-wrapper">
+                    <a href="basket.html">
+                        <img class="header__basket" src="images/basket.svg" alt="Корзина">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <div class="main">
         <div class="content">
-            <input placeholder="Поиск по ресторанам и кухням" class="search">
+            <input id="searchRestaurants" placeholder="Поиск по ресторанам и кухням" class="search input">
             <h1 class="text text-header">Рестораны в Москве</h1>
+            <h2 class="text text_hidden">Ничего не найдено</h2>
             <div class="cards">
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/1.png"
@@ -41,7 +67,7 @@
                 </div>
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/2.png"
-                            alt="Макдоналдс — Газетный"></div>
+                            alt="DimSum & Co — ЦДМ"></div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">DimSum & Co — ЦДМ</h3>
                         <p class="text text-cousine">₽ • Японская • Китайская • Азиатская</p>
@@ -50,7 +76,7 @@
                 </div>
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/3.png"
-                            alt="Макдоналдс — Газетный"></div>
+                            alt="ДвижОК — Манежная"></div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">ДвижОК — Манежная</h3>
                         <p class="text text-cousine">₽ • Американская • Европейская</p>
@@ -58,8 +84,8 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/4.png"
-                            alt="Макдоналдс — Газетный"></div>
+                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/4.png" alt="НЯ — NHA">
+                    </div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">НЯ — NHA</h3>
                         <p class="text text-cousine">₽₽ • Вьетнамская</p>
@@ -68,7 +94,7 @@
                 </div>
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/5.png"
-                            alt="Макдоналдс — Газетный"></div>
+                            alt="Точка Дзы — Цветной"></div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">Точка Дзы — Цветной</h3>
                         <p class="text text-cousine">₽₽ • Вьетнамская</p>
@@ -76,8 +102,8 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/6.png"
-                            alt="Макдоналдс — Газетный"></div>
+                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/6.png" alt="Cinnabon">
+                    </div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">Cinnabon</h3>
                         <p class="text text-cousine">₽ • Выпечка • Десерты • Капкейки</p>
@@ -85,8 +111,8 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/7.png"
-                            alt="Макдоналдс — Газетный"></div>
+                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/7.png" alt="PIZZELOVE">
+                    </div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">PIZZELOVE</h3>
                         <p class="text text-cousine">₽₽ • Пицца</p>
@@ -95,7 +121,7 @@
                 </div>
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/8.png"
-                            alt="Макдоналдс — Газетный"></div>
+                            alt="Zю кафе — Тверская"></div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">Zю кафе — Тверская</h3>
                         <p class="text text-cousine">₽₽ • Японская</p>
@@ -104,7 +130,7 @@
                 </div>
                 <div class="card">
                     <div class="card__photo-wrapper"><img class="photo card__photo" src="images/9.png"
-                            alt="Макдоналдс — Газетный"></div>
+                            alt="Bar BQ Cafe — Манежная"></div>
                     <div class="card__text-wrapper">
                         <h3 class="text card__header">Bar BQ Cafe — Манежная</h3>
                         <p class="text text-cousine">₽₽₽ • Европейская</p>

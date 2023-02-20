@@ -11,11 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
-    <div class="background"></div>
-    <div class="log-in-wrapper">
-        <div class="log-in">Log in</div>
-    </div>
+<body">
     <div class="header">
         <div class="content">
             <div class="logo header__logo">
@@ -25,101 +21,16 @@
                 <button class="button header__button">
                     <p class="text button__text">Log in</p>
                 </button>
-                <div class="basket-wrapper">
-                    <a href="eng.basket.html">
-                        <img class="header__basket" src="images/basket.svg" alt="Basket">
-                    </a>
-                </div>
             </div>
         </div>
     </div>
     <div class="main">
         <div class="content">
-            <input id="searchRestaurants" placeholder="Search by restaurants and cuisines" class="search">
-            <h1 class="text text-header">Restaurants in Moscow</h1>
-            <h2 class="text text_hidden">Nothing found</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/1.png"
-                            alt="McDonald's - Gazetny"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">McDonald's - Gazetny</h3>
-                        <p class="text text-cousine">₽₽ • Burgers</p>
-                        <p class="text text-delivery-time">25 - 35 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/2.png"
-                            alt="DimSum & Co — CDM"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">DimSum & Co — CDM</h3>
-                        <p class="text text-cousine">₽ • Japanese • Chinese • Asian</p>
-                        <p class="text text-delivery-time">40 - 50 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/3.png"
-                            alt="DvizhOK — Manezhnaya"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">DvizhOK — Manezhnaya</h3>
-                        <p class="text text-cousine">₽ • American • European</p>
-                        <p class="text text-delivery-time">35 - 45 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/4.png" alt="NYA — NHA">
-                    </div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">NYA — NHA</h3>
-                        <p class="text text-cousine">₽₽ • Vietnamese</p>
-                        <p class="text text-delivery-time">30 - 40 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/5.png"
-                            alt="Dzy Point — Tsvetnoy"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">Dzy Point — Tsvetnoy</h3>
-                        <p class="text text-cousine">₽₽ • Vietnamese</p>
-                        <p class="text text-delivery-time">40 - 50 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/6.png" alt="Cinnabon">
-                    </div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">Cinnabon</h3>
-                        <p class="text text-cousine">₽ • Bakery • Desserts • Cupcakes</p>
-                        <p class="text text-delivery-time">25 - 35 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/7.png" alt="PIZZELOVE">
-                    </div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">PIZZELOVE</h3>
-                        <p class="text text-cousine">₽₽ • Piza</p>
-                        <p class="text text-delivery-time">15 - 25 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/8.png"
-                            alt="Zu cafe — Tverskaya"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">Zu cafe — Tverskaya</h3>
-                        <p class="text text-cousine">₽₽ • Japanese</p>
-                        <p class="text text-delivery-time">25 - 35 min</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__photo-wrapper"><img class="photo card__photo" src="images/9.png"
-                            alt="Bar BQ Cafe — Manezhnaya"></div>
-                    <div class="card__text-wrapper">
-                        <h3 class="text card__header">Bar BQ Cafe — Manezhnaya</h3>
-                        <p class="text text-cousine">₽₽₽ • European</p>
-                        <p class="text text-delivery-time">30 - 40 min</p>
-                    </div>
-                </div>
+            <h1 class="text text-header">Cart is empty</h1>
+            <div class="button-wrapper">
+                <a href="eng.index.html">
+                    <button class="button button_basket">Back to shopping</button>
+                </a>
             </div>
         </div>
     </div>
@@ -138,7 +49,7 @@
                         </div>
                         <img class="select__arrow" src="images/arrow.svg" alt="">
                     </div>
-                    <a href="index.html">
+                    <a href="basket.html">
                         <div id="select_hidden" class="select select_hidden">
                             <div class="select__language">
                                 <p class="text footer__text">Русский</p>
@@ -223,6 +134,6 @@
     <button onclick="scrollToTop()" class="arrow-top" id="topBtn">
         <img src="images/arrowTop.svg" alt="">
     </button>
-    </body>
+</body>
 
 </html>

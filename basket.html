@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UberEats</title>
+    <script src="script.js"></script>
+</head>
+
+<body">
+    <div class="header">
+        <div class="content">
+            <div class="logo header__logo">
+                <img src="images/logo.svg" alt="UberEats">
+            </div>
+            <div class="header__buttons">
+                <button class="button header__button">
+                    <p class="text button__text">Войти</p>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content">
+            <h1 class="text text-header">Корзина пуста</h1>
+            <div class="button-wrapper">
+                <a href="index.html">
+                    <button class="button button_basket">Назад к покупкам</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <div class="footer__block footer__block_left footer__block_center">
+                <img class="logo footer__logo" src="images/white-logo.svg" alt="">
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_between">
+                <div class="footer__elements footer__elements_logos">
+                    <div id="select" class="select">
+                        <div class="select__language">
+                            <img class="select__logo" src="images/world.svg" alt="">
+                            <p class="text footer__text">Русский</p>
+                        </div>
+                        <img class="select__arrow" src="images/arrow.svg" alt="">
+                    </div>
+                    <a href="eng.basket.html">
+                        <div id="select_hidden" class="select select_hidden">
+                            <div class="select__language">
+                                <p class="text footer__text">English</p>
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                    <p class="text footer__text footer__text_big"><span class="green">#</span>UberEats</p>
+                    <br>
+                    <div class="logos footer__logos">
+                        <a class="link link_logo" href="https://www.facebook.com/">
+                            <img src="images/facebook.svg" alt="facebook">
+                        </a>
+                        <a class="link link_logo" href="https://twitter.com/">
+                            <img src="images/twitter.svg" alt="twitter">
+                        </a>
+                        <a class="link link_logo" href="https://www.instagram.com/">
+                            <img src="images/instagram.svg" alt="instagram">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Об UberEats</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Станьте партнёром по доставке</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Станьте парнёром-рестораном</p>
+                    </a>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Все города</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Цены</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Помощь</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">FAQs</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_around footer__block_center">
+                <div class="footer__images">
+                    <a class="link link_logo" href="https://www.apple.com/ru/app-store/">
+                        <img src="images/AppStore.svg" alt="AppStore">
+                    </a>
+                    <a class="link link_logo" href="https://play.google.com/store/games?hl=ru&gl=US&pli=1">
+                        <img onclick="goTo('GooglePlay')" src="images/GooglePlay.svg" alt="GooglePlay">
+                    </a>
+                </div>
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_between footer__block_center">
+                <div class="footer__elements">
+                    <p class="text footer__text footer__text_small">© 2017 Uber Technologies Inc.</p>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text footer__text_small">Обработка персональных данных</p>
+                    </a>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text footer__text_small">Пользовательское соглашение</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" class="arrow-top" id="topBtn">
+        <img src="images/arrowTop.svg" alt="">
+    </button>
+</body>
+
+</html>

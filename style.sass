@@ -4,14 +4,27 @@ $maxWidthSmall: 316px
 
 html
     scroll-behavior: smooth
+.background
+    transition: opacity
+    transition-duration: 0.5s
+    visibility: hidden
+    z-index: 2
+    position: fixed
+    width: 100%
+    height: 100%
+    background: black
+    opacity: 0%
 .body
     background: #F2F2F2
 .text
     font-family: 'Roboto'
     font-size: 13px
     color: #1D1D1D
+    &.login__text
+        font-size: 19px
     &.text-header
         font-size: 22px
+        word-break: break-all
     &.card__header
         font-size: 16px
     &.text-cousine
@@ -19,6 +32,9 @@ html
         font-size: 14px
     &.text-delivery-time
         font-size: 13px
+    &_hidden
+        display: none
+        font-size: 17px
     &.footer__text
         color: #FFFFFF
         @media screen and (max-width: 500px)
@@ -31,7 +47,7 @@ html
                 color: #49A144
 
 .content
-    max-width: $maxWidth
+    width: $maxWidth
     @media screen and (max-width: 970px)
         max-width: $maxWidthMedium
     @media screen and (max-width: 660px)
@@ -42,15 +58,41 @@ html
         display: flex
         justify-content: space-between
         align-items: center
-        width: 100%
+        width: $maxWidth
         .header__buttons
             display: flex
             align-items: center
             justify-content: space-between
             width: 134px
+            .basket-wrapper
+                display: flex
+                justify-content: center
+                align-items: center
     .footer &
-        width: 100%
-
+        width: $maxWidth
+.log-in-wrapper
+    display: flex
+    justify-content: center
+    .log-in
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        align-items: center
+        z-index: 3
+        position: fixed
+        top: -300px
+        transition: top
+        transition-duration: 0.5s
+        background: #FFFFFF
+        width: 400px
+        height: 300px
+        .email-box, .password-box
+            display: flex
+            flex-direction: column
+            align-items: center
+            .input
+                height: 1.5rem
+                margin-top: 12px
 .header
     position: fixed
     display: flex
@@ -59,17 +101,12 @@ html
     width: 100%
     height: 72px
     background: #FFFFFF
-    .content
-        .header__buttons
-            .button
-                height: 40px
-                width: 78px
-                background: #FFFFFF
-                border: 1px solid #E0E0E0
-                border-radius: 2px
-                &__text
-                    font-size: 13px
+    .basket-wrapper
+        &:hover
+            position: relative
+            top: 3px
 .main
+    min-height: 500px
     padding-top: 72px
     display: flex
     justify-content: center
@@ -79,7 +116,20 @@ html
     .text-header
         margin-top: 35px
         margin-bottom: 14px
-
+    .button-wrapper
+        padding-top: 10%
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+.input
+    margin: 0
+    padding: 0 3px 0 3px
+    border: 1px solid rgba(75, 75, 75, 0.3)
+    border-radius: 2px
+    font-size: 16px
+    &:focus
+        outline: none
 .search
     width: 100%
     border: 0
@@ -91,14 +141,16 @@ html
         color: rgba(62, 62, 62, 0.5)
     &:focus
         outline: 0
+        &::placeholder
+            opacity: 0%
 .cards
     width: 100%
     display: flex
     justify-content: space-between
-    @media screen and (max-width: 660px)
-        justify-content: space-between
     flex-wrap: wrap
     margin-bottom: 71.5px
+    @media screen and (max-width: 660px)
+        justify-content: space-between
     .card
         width: 308px
         height: 366px
@@ -151,8 +203,8 @@ html
         &_center
             align-items: center
         .link_logo
-                &:hover
-                    opacity: 80%
+            &:hover
+                opacity: 80%
                 &:active
                     opacity: 60%
         .footer__images
@@ -193,6 +245,27 @@ html
     height: 1px
     margin: 0
     padding: 0
+.button
+    height: 40px
+    width: 78px
+    background: #FFFFFF
+    border: 1px solid #E0E0E0
+    border-radius: 2px
+    &__text
+        font-size: 13px
+    &:hover
+        cursor: pointer
+        background: #f0f0f0
+    &:active
+        background: #e5e2e2
+    &_basket
+        width: 150px
+    &_passive
+        .text
+            color: rgba(0, 0, 0, 0.4)
+        &:hover
+            background: #FFFFFF
+            cursor: auto
 .select
     padding-left: 12px
     padding-right: 12px
@@ -223,25 +296,25 @@ html
             height: 5px
             width: 8.75px
     &_hidden
+        display: none
+        z-index: 1
+        position: absolute
         @media screen and (max-width: 660px)
             width: 16%
         @media screen and (max-width: 500px)
             width: 70px
             height: 24px
-        display: none
-        z-index: 1
-        position: absolute
         .select__language
             padding-left: 33px
             @media screen and (max-width: 660px)
                 padding: 0
     &__language
         width: 83px
-        @media screen and (max-width: 500px)
-            width: 83%
         display: flex
         align-items: center
         justify-content: space-between
+        @media screen and (max-width: 500px)
+            width: 83%
     &__logo
         height: 16px
         width: 16px
