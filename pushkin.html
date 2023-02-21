@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="setLang('rus', null)">
+<body onload="setLang('rus')">
     <div class="background"></div>
     <div class="log-in-wrapper">
         <div class="log-in">
@@ -42,14 +42,117 @@
                 <button class="button header__button">
                     <p class="text button__text">Войти</p>
                 </button>
+                <div class="basket-wrapper">
+                    <img class="header__basket" src="images/basket.svg" alt="Корзина">
+                </div>
             </div>
         </div>
     </div>
     <div class="main">
+        <div class="wallpaper">
+            <div class="content">
+                <div class="wallpaper__card">
+                    <div class="text wallpaper__text text_header">
+                        Трактир «Пушкин»
+                    </div>
+                    <div class="wallpaper__text-wrapper">
+                        <div class="text wallpaper__text">
+                            ₽₽₽ • Европейская
+                        </div>
+                        <div class="text wallpaper__text text_time">
+                            40 - 50 мин
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="content">
+                <div class="text menu__text text_active">Закуски</div>
+                <div class="text menu__text">Салаты</div>
+                <div class="text menu__text">Супы</div>
+                <div class="text menu__text">Горячие блюда</div>
+                <div class="text menu__text">Гарниры</div>
+                <div class="text menu__text">Десерты</div>
+            </div>
+        </div>
         <div class="content">
-            <h1 class="text text-header">Корзина пуста</h1>
-            <div class="button-wrapper">
-                <button class="button button_basket">Назад к покупкам</button>
+            <h1 class="text text-header">Закуски</h1>
+            <div class="dishes">
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Сельдь на бородинском хлебе</div>
+                            <div class="text dish__text">С яйцом и огурцом</div>
+                        </div>
+                        <div class="text text_price">240 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish1.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Соленья ассорти</div>
+                        </div>
+                        <div class="text text_price">320 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish2.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Грибы маринованные</div>
+                        </div>
+                        <div class="text text_price">300 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish3.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Сало домашнее с горчицей</div>
+                        </div>
+                        <div class="text text_price">320 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish4.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Малосольная семга</div>
+                        </div>
+                        <div class="text text_price">
+                            390 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish5.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Язык говяжий с хреном</div>
+                        </div>
+                        <div class="text text_price">350 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish6.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -68,7 +171,7 @@
                         </div>
                         <img class="select__arrow" src="images/arrow.svg" alt="">
                     </div>
-                    <a href="eng.basket.html">
+                    <a href="eng.index.html">
                         <div id="select_hidden" class="select select_hidden">
                             <div class="select__language">
                                 <p class="text footer__text">English</p>

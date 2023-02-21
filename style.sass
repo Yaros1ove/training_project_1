@@ -8,7 +8,7 @@ html
     transition: opacity
     transition-duration: 0.5s
     visibility: hidden
-    z-index: 2
+    z-index: 3
     position: fixed
     width: 100%
     height: 100%
@@ -20,11 +20,36 @@ html
     font-family: 'Roboto'
     font-size: 13px
     color: #1D1D1D
+    &.text_price
+        font-size: 15px
+        font-weight: 500
+        line-height: 21px
+        letter-spacing: 0em
+    &.dish__text
+        color: #626262
     &.login__text
         font-size: 19px
     &.text-header
         font-size: 22px
         word-break: break-all
+    &.wallpaper__text
+        font-size: 14px
+        &.text_header
+            font-size: 36px
+        &.text_time
+            font-size: 13px
+            color: #FFFFFF
+            background-color: #262626
+    &.menu__text
+        font-size: 16px
+        color: #626262
+        font-weight: 400
+        line-height: 19px
+        letter-spacing: 0em
+        &:hover
+            color: #000000
+        &.text_active
+            color: #327430
     &.card__header
         font-size: 16px
     &.text-cousine
@@ -68,6 +93,17 @@ html
                 display: flex
                 justify-content: center
                 align-items: center
+    .menu &
+        display: inline-flex
+        .text
+            display: flex
+            align-items: center
+            height: 100%
+            padding-right: 40px
+            &:hover
+                cursor: pointer
+            &.text_active:hover
+                cursor: initial
     .footer &
         width: $maxWidth
 .log-in-wrapper
@@ -78,7 +114,7 @@ html
         flex-direction: column
         justify-content: space-evenly
         align-items: center
-        z-index: 3
+        z-index: 4
         position: fixed
         top: -300px
         transition: top
@@ -94,6 +130,7 @@ html
                 height: 1.5rem
                 margin-top: 12px
 .header
+    z-index: 2
     position: fixed
     display: flex
     justify-content: center
@@ -105,11 +142,47 @@ html
         &:hover
             position: relative
             top: 3px
+            cursor: pointer
+.wallpaper
+    display: flex
+    justify-content: center
+    width: 100%
+    height: 364px
+    background-image: url("images/wallpaper.png")
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+    .content
+        display: flex
+        align-items: center
+    &__card
+        height: 204px
+        width: 389px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        justify-self: stretch
+        background-color: #FFFFFF
+        box-shadow: 0 0 16px 0 rgba(117, 117, 117, 0.2)
+        border-radius: 2px
+        .text_header
+            text-align: center
+        .wallpaper__text-wrapper
+            display: flex
+            justify-content: space-around
+            .text_time
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 32px
+                width: 100px
+                border-radius: 16px
 .main
     min-height: 500px
     padding-top: 72px
     display: flex
-    justify-content: center
+    flex-direction: column
+    align-items: center
     .search
         margin-top: 56px
         margin-bottom: 28px
@@ -122,6 +195,12 @@ html
         flex-direction: column
         justify-content: flex-start
         align-items: center
+    .menu
+        height: 80px
+        border: 1px solid rgba(75, 75, 75, 0.2)
+        width: 100%
+        display: flex
+        justify-content: center
 .input
     margin: 0
     padding: 0 3px 0 3px
@@ -143,6 +222,41 @@ html
         outline: 0
         &::placeholder
             opacity: 0%
+.dishes
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 71.5px
+    .dish
+        height: 160px
+        width: 470px
+        display: flex
+        justify-content: space-between
+        border: 1px solid rgba(117, 117, 117, 0.2)
+        border-radius: 2px
+        margin-top: ($maxWidth - (308px * 3)) / 4
+        margin-bottom: ($maxWidth - (308px * 3)) / 4
+        @media screen and (max-width: 970px)
+            width: 100%
+        @media screen and (max-width: 660px)
+            &:hover
+                cursor: pointer
+        &__basket
+            position: relative
+            z-index: 0
+            top: 21px
+            width: 30px
+            &:hover
+                top: 24px
+        &__text-wrapper
+            padding: 16px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            .text_price
+            .card__header
+                margin-bottom: 0.8em
 .cards
     width: 100%
     display: flex

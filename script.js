@@ -1,4 +1,10 @@
+let lang = 'rus'
 window.onscroll = function () { scrollFunction() }
+
+
+function setLang(curLang) {
+    lang = curLang
+}
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -71,34 +77,53 @@ let hideLogIn = function () {
 
 function logIn() {
     setTimeout(() => {
-        document.querySelector('.email-box > :first-child').textContent = 'Вы вошли как'
+
+        if (lang === 'rus') {
+            document.querySelector('.email-box > :first-child').textContent = 'Вы вошли как'
+            document.querySelector('#loginButton').querySelector('.text').textContent = 'Выйти'
+        } else {
+            document.querySelector('.email-box > :first-child').textContent = 'You are logged in as'
+            document.querySelector('#loginButton').querySelector('.text').textContent = 'Log out'
+        }
         let text = document.querySelector('#login').value
         document.querySelector('#login').remove()
         document.querySelector('.password-box').insertAdjacentHTML('beforebegin', `<p id="loginText" class="text text-header">${text}</p>`)
         document.querySelector('.password-box').remove()
-        document.querySelector('#loginButton').querySelector('.text').textContent = 'Выйти'
         document.querySelector('#loginButton').removeEventListener('click', logIn)
         document.querySelector('#loginButton').addEventListener('click', logOut)
     }, 500)
-    document.querySelector('.header__button').textContent = 'Выйти'
+    if (lang === 'rus') {
+        document.querySelector('.header__button').textContent = 'Выйти'
+    } else {
+        document.querySelector('.header__button').textContent = 'Log out'
+    }
     hideLogIn()
 }
 
 function logOut() {
+    let appendText
+    let appendButtonText
+    if (lang === 'rus') {
+        appendText = 'Пароль'
+        appendButtonText = 'Войти'
+    } else {
+        appendText = 'Password'
+        appendButtonText = 'Log in'
+    }
     setTimeout(() => {
         document.querySelector('.email-box > :first-child').textContent = 'E-mail'
         document.querySelector('.email-box > :first-child').insertAdjacentHTML('afterend', '<input id="login" type="email" class="input login__input">')
         document.querySelector('.email-box').insertAdjacentHTML('afterend', `<div class="password-box">
-        <p class="text login__text">Пароль</p>
+        <p class="text login__text">${appendText}</p>
         <input id="password" type="password" class="input password__input">
     </div>`)
-    document.querySelector('.log-in').querySelector('.text-header').remove()
-    document.querySelector('#loginButton').querySelector('.text').textContent = 'Войти'
-    document.querySelector('#loginButton').removeEventListener('click', logOut)
-    document.querySelector('#loginButton').classList.add('button_passive')
-    document.querySelector('#login').addEventListener('keydown', validEmail)
+        document.querySelector('.log-in').querySelector('.text-header').remove()
+        document.querySelector('#loginButton').querySelector('.text').textContent = appendButtonText
+        document.querySelector('#loginButton').removeEventListener('click', logOut)
+        document.querySelector('#loginButton').classList.add('button_passive')
+        document.querySelector('#login').addEventListener('keydown', validEmail)
     }, 500)
-    document.querySelector('.header__button').textContent = 'Войти'
+    document.querySelector('.header__button').textContent = appendButtonText
     hideLogIn()
 }
 
@@ -107,7 +132,7 @@ let validEmail = function () {
         let login = document.querySelector('#login')
         let regexp = /\w{1,}@[a-z]{1,}\.[a-z]{1,}$/
         let loginButton = document.querySelector('#loginButton')
-        if (login.value.match(regexp) || login.value === '') {
+        if (login.value.match(regexp)) {
             login.style.background = 'white'
             loginButton.classList.remove('button_passive')
             loginButton.addEventListener('click', logIn)
@@ -116,15 +141,30 @@ let validEmail = function () {
             loginButton.classList.add('button_passive')
             loginButton.removeEventListener('click', logIn)
         }
+        if (login.value === '') {
+            login.style.background = 'white'
+        }
     }, 0)
+}
+
+function changeMenu() {
+    let menu__text = document.querySelectorAll('.menu__text')
+    let index = 15
+    for (let i = 0; i < menu__text.length; i++) {
+        if (!menu__text[i].classList.contains('text_active')) {
+            index-=i
+        }
+    }
+    let main = document.querySelector('.main > .content')
+    main.style.position = 'relative'
+    main.style.left = '300px'
+    console.log(main)
 }
 
 window.addEventListener('DOMContentLoaded', () => {
     let select = document.querySelector('#select')
     select.addEventListener('click', showSelect)
     document.addEventListener('click', hideSelect)
-    let searchRestaurants = document.querySelector('#searchRestaurants')
-    searchRestaurants.addEventListener('keydown', searchRestaurantTimeout)
     let header__button = document.querySelector('.header__button')
     header__button.addEventListener('click', showLogIn)
     let background = document.querySelector('.background')
@@ -133,4 +173,42 @@ window.addEventListener('DOMContentLoaded', () => {
     cancelButton.addEventListener('click', hideLogIn)
     let login = document.querySelector('#login')
     login.addEventListener('keydown', validEmail)
+    let cards = document.querySelectorAll('.card')
+    if (document.querySelectorAll('menu__text')) {
+        let menu__text = document.querySelectorAll('.menu__text')
+        menu__text.forEach( (elem, index) => {
+            if(!elem.classList.contains('text_active')) {
+                elem.addEventListener('click', {handleEvent: changeMenu, target: index})
+            }
+        })
+    }
+    if (document.querySelector('.header__basket')) {
+        let header__basket = document.querySelector('.header__basket')
+        header__basket.addEventListener('click', () => {
+            if (lang === 'rus') {
+                window.location.href = 'basket.html'
+            } else {
+                window.location.href = 'eng.basket.html'
+            }
+        })
+    }
+    if (document.querySelector('.button_basket')) {
+        let button_basket = document.querySelector('.button_basket')
+        button_basket.addEventListener('click', () => {
+            history.back()
+        })
+    }
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            if (lang === 'rus') {
+                window.location.href = 'pushkin.html'
+            } else {
+                window.location.href = 'eng.pushkin.html'
+            }
+        })
+    })
+    if (document.querySelector('#searchRestaurants')) {
+        let searchRestaurants = document.querySelector('#searchRestaurants')
+        searchRestaurants.addEventListener('keydown', searchRestaurantTimeout)
+    }
 })

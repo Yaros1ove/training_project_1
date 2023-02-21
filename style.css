@@ -6,7 +6,7 @@ html {
   transition: opacity;
   transition-duration: 0.5s;
   visibility: hidden;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -23,12 +23,45 @@ html {
   font-size: 13px;
   color: #1D1D1D;
 }
+.text.text_price {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+}
+.text.dish__text {
+  color: #626262;
+}
 .text.login__text {
   font-size: 19px;
 }
 .text.text-header {
   font-size: 22px;
   word-break: break-all;
+}
+.text.wallpaper__text {
+  font-size: 14px;
+}
+.text.wallpaper__text.text_header {
+  font-size: 36px;
+}
+.text.wallpaper__text.text_time {
+  font-size: 13px;
+  color: #FFFFFF;
+  background-color: #262626;
+}
+.text.menu__text {
+  font-size: 16px;
+  color: #626262;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+.text.menu__text:hover {
+  color: #000000;
+}
+.text.menu__text.text_active {
+  color: #327430;
 }
 .text.card__header {
   font-size: 16px;
@@ -97,6 +130,21 @@ html {
   justify-content: center;
   align-items: center;
 }
+.menu .content {
+  display: inline-flex;
+}
+.menu .content .text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 40px;
+}
+.menu .content .text:hover {
+  cursor: pointer;
+}
+.menu .content .text.text_active:hover {
+  cursor: initial;
+}
 .footer .content {
   width: 956px;
 }
@@ -110,7 +158,7 @@ html {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: -300px;
   transition: top;
@@ -130,6 +178,7 @@ html {
 }
 
 .header {
+  z-index: 2;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -141,13 +190,56 @@ html {
 .header .basket-wrapper:hover {
   position: relative;
   top: 3px;
+  cursor: pointer;
+}
+
+.wallpaper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 364px;
+  background-image: url("images/wallpaper.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wallpaper .content {
+  display: flex;
+  align-items: center;
+}
+.wallpaper__card {
+  height: 204px;
+  width: 389px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-self: stretch;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 16px 0 rgba(117, 117, 117, 0.2);
+  border-radius: 2px;
+}
+.wallpaper__card .text_header {
+  text-align: center;
+}
+.wallpaper__card .wallpaper__text-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.wallpaper__card .wallpaper__text-wrapper .text_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 100px;
+  border-radius: 16px;
 }
 
 .main {
   min-height: 500px;
   padding-top: 72px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .main .search {
   margin-top: 56px;
@@ -163,6 +255,13 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+.main .menu {
+  height: 80px;
+  border: 1px solid rgba(75, 75, 75, 0.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .input {
@@ -198,6 +297,52 @@ html {
 }
 .search:focus::placeholder {
   opacity: 0%;
+}
+
+.dishes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 71.5px;
+}
+.dishes .dish {
+  height: 160px;
+  width: 470px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(117, 117, 117, 0.2);
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 970px) {
+  .dishes .dish {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .dishes .dish:hover {
+    cursor: pointer;
+  }
+}
+.dishes .dish__basket {
+  position: relative;
+  z-index: 0;
+  top: 21px;
+  width: 30px;
+}
+.dishes .dish__basket:hover {
+  top: 24px;
+}
+.dishes .dish__text-wrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dishes .dish__text-wrapper .card__header {
+  margin-bottom: 0.8em;
 }
 
 .cards {

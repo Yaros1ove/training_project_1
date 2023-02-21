@@ -11,10 +11,27 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="setLang('eng', 'eng.index.html')">
     <div class="background"></div>
     <div class="log-in-wrapper">
-        <div class="log-in">Log in</div>
+        <div class="log-in">
+            <div class="email-box">
+                <p class="text login__text">E-mail</p>
+                <input id="login" type="email" class="input login__input">
+            </div>
+            <div class="password-box">
+                <p class="text login__text">Password</p>
+                <input id="password" type="password" class="input password__input">
+            </div>
+            <div class="login__buttons">
+                <button id="cancelButton" class="button login__button">
+                    <p class="text button__text">Cancel</p>
+                </button>
+                <button id="loginButton" class="button login__button button_passive">
+                    <p class="text button__text">Log in</p>
+                </button>
+            </div>
+        </div>
     </div>
     <div class="header">
         <div class="content">
