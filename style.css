@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  max-width: 100vw;
 }
 
 .background {
@@ -137,7 +138,13 @@ html {
   display: flex;
   align-items: center;
   height: 100%;
+  text-align: left;
   padding-right: 40px;
+}
+@media screen and (max-width: 970px) {
+  .menu .content .text {
+    font-size: 15px;
+  }
 }
 .menu .content .text:hover {
   cursor: pointer;
@@ -235,6 +242,7 @@ html {
 }
 
 .main {
+  overflow: hidden;
   min-height: 500px;
   padding-top: 72px;
   display: flex;

@@ -4,6 +4,7 @@ $maxWidthSmall: 316px
 
 html
     scroll-behavior: smooth
+    max-width: 100vw
 .background
     transition: opacity
     transition-duration: 0.5s
@@ -99,7 +100,10 @@ html
             display: flex
             align-items: center
             height: 100%
+            text-align: left
             padding-right: 40px
+            @media screen and (max-width: 970px)
+                font-size: 15px
             &:hover
                 cursor: pointer
             &.text_active:hover
@@ -178,6 +182,7 @@ html
                 width: 100px
                 border-radius: 16px
 .main
+    overflow: hidden
     min-height: 500px
     padding-top: 72px
     display: flex

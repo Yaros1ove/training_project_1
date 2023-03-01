@@ -1,6 +1,41 @@
 let lang = 'rus'
 window.onscroll = function () { scrollFunction() }
 
+let binded = []
+for (let i = 0; i < 6; i++) {
+    binded.push(changeMenu.bind(null, i))
+}
+let tabDishes = []
+
+{
+    class Dish {
+        constructor(name, engName, price, src, description = '') {
+            this.name = name
+            this.engName = engName
+            this.price = price
+            this.src = src
+            this.description = description
+        }
+    }
+
+    const herring = new Dish('Сельдь на бородинском хлебе', 'Herring on Borodino bread', 240, 'images/dish1.png', 'С яйцом и огурцом')
+    const pickles = new Dish('Соленья ассорти', 'Assorted pickles', 320, 'images/dish2.png')
+    const mushrooms = new Dish('Грибы маринованные', 'Marinated mushrooms', 300, 'images/dish3.png')
+    const salo = new Dish('Сало домашнее с горчицей', 'Homemade salo with mustard', 320, 'images/dish4.png')
+    const salmon = new Dish('Малосольная семга', 'Salted salmon', 390, 'images/dish5.png')
+    const tongue = new Dish('Язык говяжий с хреном', 'Beef tongue with horseradish', 350, 'images/dish6.png')
+
+    let Snacks = [], Salads = [], Soups = [], MainCourses = [], Garnishs = [], Deserts = []
+    Snacks.push(herring, pickles, mushrooms, salo, salmon, tongue)
+    Salads.push(pickles, mushrooms, salo, salmon, tongue, herring)
+    Soups.push(mushrooms, salo, salmon, tongue, herring, pickles)
+    MainCourses.push(salo, salmon, tongue, herring, pickles, mushrooms)
+    Garnishs.push(salmon, tongue, herring, pickles, mushrooms, salo)
+    Deserts.push(tongue, herring, pickles, mushrooms, salo, salmon)
+    tabDishes.push(Snacks, Salads, Soups, MainCourses, Garnishs, Deserts)
+    
+}
+
 
 function setLang(curLang) {
     lang = curLang
@@ -147,18 +182,39 @@ let validEmail = function () {
     }, 0)
 }
 
-function changeMenu() {
+function changeMenu(target) {
     let menu__text = document.querySelectorAll('.menu__text')
-    let index = 15
+    let index
     for (let i = 0; i < menu__text.length; i++) {
-        if (!menu__text[i].classList.contains('text_active')) {
-            index-=i
+        if (menu__text[i].classList.contains('text_active')) {
+            index = i
         }
     }
-    let main = document.querySelector('.main > .content')
-    main.style.position = 'relative'
-    main.style.left = '300px'
-    console.log(main)
+    let content = document.querySelector('.main > .content')
+    content.querySelector('.text-header').textContent = menu__text[target].textContent
+    menu__text[target].classList.add('text_active')
+    menu__text[target].removeEventListener('click', binded[target])
+    menu__text[index].classList.remove('text_active')
+    menu__text[index].addEventListener('click', binded[index])
+
+    let dishes = content.querySelectorAll('.dish')
+
+    for (let i = 0; i < dishes.length; i++) {
+        let dish = dishes[i]
+        if (lang === 'eng') {
+            dish.querySelector('.card__header').textContent = tabDishes[target][i].engName
+            dish.querySelector('.dish__photo').alt = tabDishes[target][i].engName
+        } else {
+            dish.querySelector('.card__header').textContent = tabDishes[target][i].name
+            dish.querySelector('.dish__photo').alt = tabDishes[target][i].name
+        }
+        
+        dish.querySelector('.dish__text').textContent = tabDishes[target][i].description
+        dish.querySelector('.text_price').textContent = tabDishes[target][i].price + ' ₽'
+        dish.querySelector('.dish__photo').src = tabDishes[target][i].src
+        
+    }
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -176,9 +232,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let cards = document.querySelectorAll('.card')
     if (document.querySelectorAll('menu__text')) {
         let menu__text = document.querySelectorAll('.menu__text')
-        menu__text.forEach( (elem, index) => {
-            if(!elem.classList.contains('text_active')) {
-                elem.addEventListener('click', {handleEvent: changeMenu, target: index})
+        menu__text.forEach((elem, index) => {
+            if (!elem.classList.contains('text_active')) {
+                elem.addEventListener('click', binded[index])
             }
         })
     }
