@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UberEats</title>
+    <script src="script.js"></script>
+</head>
+
+<body onload="setLang('eng')">
+    <div class="background"></div>
+    <div class="log-in-wrapper">
+        <div class="log-in">
+            <div class="email-box">
+                <p class="text login__text">E-mail</p>
+                <input id="login" type="email" class="input login__input">
+            </div>
+            <div class="password-box">
+                <p class="text login__text">Password</p>
+                <input id="password" type="password" class="input password__input">
+            </div>
+            <div class="login__buttons">
+                <button id="cancelButton" class="button login__button">
+                    <p class="text button__text">Cancel</p>
+                </button>
+                <button id="loginButton" class="button login__button button_passive">
+                    <p class="text button__text">Log in</p>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="content">
+            <div class="logo header__logo">
+                <img src="images/logo.svg" alt="UberEats">
+            </div>
+            <div class="header__buttons">
+                <button class="button header__button">
+                    <p class="text button__text">Log in</p>
+                </button>
+                <div class="basket-wrapper">
+                    <img class="header__basket" src="images/basket.svg" alt="Корзина">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="wallpaper">
+            <div class="content">
+                <div class="wallpaper__card">
+                    <div class="text wallpaper__text text_header">
+                        Tavern "Pushkin"
+                    </div>
+                    <div class="wallpaper__text-wrapper">
+                        <div class="text wallpaper__text">
+                            ₽₽₽ • European
+                        </div>
+                        <div class="text wallpaper__text text_time">
+                            40 - 50 min
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="content">
+                <div class="text menu__text text_active">Snacks</div>
+                <div class="text menu__text">Salads</div>
+                <div class="text menu__text">Soups</div>
+                <div class="text menu__text">Main dishes</div>
+                <div class="text menu__text">Garnishs</div>
+                <div class="text menu__text">Deserts</div>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="text text-header">Snacks</h1>
+            <div class="dishes">
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Herring on Borodino bread</div>
+                            <div class="text dish__text">With egg and cucumber</div>
+                        </div>
+                        <div class="text text_price">240 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish1.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Assorted pickles</div>
+                            <div class="text dish__text"></div>
+                        </div>
+                        <div class="text text_price">320 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish2.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Marinated mushrooms</div>
+                            <div class="text dish__text"></div>
+                        </div>
+                        <div class="text text_price">300 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish3.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Homemade salo with mustard</div>
+                            <div class="text dish__text"></div>
+                        </div>
+                        <div class="text text_price">320 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish4.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Salted salmon</div>
+                        </div>
+                        <div class="text dish__text"></div>
+                        <div class="text text_price">
+                            390 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish5.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+                <div class="dish">
+                    <div class="dish__text-wrapper">
+                        <div class="dish__text_header-wrapper">
+                            <div class="text card__header">Beef tongue with horseradish</div>
+                            <div class="text dish__text"></div>
+                        </div>
+                        <div class="text text_price">350 ₽
+                            <img class="dish__basket" src="images/basket.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dish__photo-wrapper"><img class="photo dish__photo" src="images/dish6.png"
+                            alt="Сельдь на бородинском хлебе"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <div class="footer__block footer__block_left footer__block_center">
+                <img class="logo footer__logo" src="images/white-logo.svg" alt="">
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_between">
+                <div class="footer__elements footer__elements_logos">
+                    <div id="select" class="select">
+                        <div class="select__language">
+                            <img class="select__logo" src="images/world.svg" alt="">
+                            <p class="text footer__text">English</p>
+                        </div>
+                        <img class="select__arrow" src="images/arrow.svg" alt="">
+                    </div>
+                    <a href="pushkin.html">
+                        <div id="select_hidden" class="select select_hidden">
+                            <div class="select__language">
+                                <p class="text footer__text">Русский</p>
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                    <p class="text footer__text footer__text_big"><span class="green">#</span>UberEats</p>
+                    <br>
+                    <div class="logos footer__logos">
+                        <a class="link link_logo" href="https://www.facebook.com/">
+                            <img src="images/facebook.svg" alt="facebook">
+                        </a>
+                        <a class="link link_logo" href="https://twitter.com/">
+                            <img src="images/twitter.svg" alt="twitter">
+                        </a>
+                        <a class="link link_logo" href="https://www.instagram.com/">
+                            <img src="images/instagram.svg" alt="instagram">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">About UberEats</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Become a delivery partner</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Become a restaurant partner</p>
+                    </a>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">All cities</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Prices</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">Help</p>
+                    </a>
+                    <br>
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text">FAQs</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_around footer__block_center">
+                <div class="footer__images">
+                    <a class="link link_logo" href="https://www.apple.com/ru/app-store/">
+                        <img src="images/AppStore.svg" alt="AppStore">
+                    </a>
+                    <a class="link link_logo" href="https://play.google.com/store/games?hl=ru&gl=US&pli=1">
+                        <img onclick="goTo('GooglePlay')" src="images/GooglePlay.svg" alt="GooglePlay">
+                    </a>
+                </div>
+            </div>
+            <hr class="line">
+            <div class="footer__block footer__block_between footer__block_center">
+                <div class="footer__elements">
+                    <p class="text footer__text footer__text_small">© 2017 Uber Technologies Inc.</p>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text footer__text_small">Processing of personal data</p>
+                    </a>
+                </div>
+                <div class="footer__elements">
+                    <a class="link" href="https://www.google.com/">
+                        <p class="text footer__text footer__text_small">Terms of use</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" class="arrow-top" id="topBtn">
+        <img src="images/arrowTop.svg" alt="">
+    </button>
+</body>
+
+</html>

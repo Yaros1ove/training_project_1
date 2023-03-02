@@ -96,6 +96,8 @@ html
                 align-items: center
     .menu &
         display: inline-flex
+        @media screen and (max-width: 660px)
+            display: none
         .text
             display: flex
             align-items: center
@@ -206,6 +208,11 @@ html
         width: 100%
         display: flex
         justify-content: center
+    .text-header
+        @media screen and (max-width: 660px)
+            font-size: 22px
+            text-decoration: underline
+            text-align: center
 .input
     margin: 0
     padding: 0 3px 0 3px

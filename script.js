@@ -9,16 +9,17 @@ let tabDishes = []
 
 {
     class Dish {
-        constructor(name, engName, price, src, description = '') {
+        constructor(name, engName, price, src, description = '', engDescription = '') {
             this.name = name
             this.engName = engName
             this.price = price
             this.src = src
             this.description = description
+            this.engDescription = engDescription
         }
     }
 
-    const herring = new Dish('Сельдь на бородинском хлебе', 'Herring on Borodino bread', 240, 'images/dish1.png', 'С яйцом и огурцом')
+    const herring = new Dish('Сельдь на бородинском хлебе', 'Herring on Borodino bread', 240, 'images/dish1.png', 'С яйцом и огурцом', 'With egg and cucumber')
     const pickles = new Dish('Соленья ассорти', 'Assorted pickles', 320, 'images/dish2.png')
     const mushrooms = new Dish('Грибы маринованные', 'Marinated mushrooms', 300, 'images/dish3.png')
     const salo = new Dish('Сало домашнее с горчицей', 'Homemade salo with mustard', 320, 'images/dish4.png')
@@ -204,12 +205,13 @@ function changeMenu(target) {
         if (lang === 'eng') {
             dish.querySelector('.card__header').textContent = tabDishes[target][i].engName
             dish.querySelector('.dish__photo').alt = tabDishes[target][i].engName
+            dish.querySelector('.dish__text').textContent = tabDishes[target][i].engDescription
         } else {
             dish.querySelector('.card__header').textContent = tabDishes[target][i].name
             dish.querySelector('.dish__photo').alt = tabDishes[target][i].name
+            dish.querySelector('.dish__text').textContent = tabDishes[target][i].description
         }
         
-        dish.querySelector('.dish__text').textContent = tabDishes[target][i].description
         dish.querySelector('.text_price').textContent = tabDishes[target][i].price + ' ₽'
         dish.querySelector('.dish__photo').src = tabDishes[target][i].src
         
